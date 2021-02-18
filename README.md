@@ -1,3 +1,14 @@
+# Step 1:
+* Clone the project from `master` branch
+# Step 2:
+* Open the Terminal and run `npm i`  this installs packages in server
+# Step 3:
+* In the same terminal run `cd client` and run `npm i' this installs packages in client
+# Step 4:
+* now run `cd ..`
+# Step 5:
+* now run `npm run dev` and open one more terminal and run `npm run client`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
