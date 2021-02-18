@@ -8,6 +8,7 @@ const path = require("path");
 const stringify = require("json-stringify-pretty-compact");
 const moment = require("moment");
 const { child_process_script } = require("../linux-server/child");
+const { getBusinessDetails } = require("../yelpFusion/yelpFusingApi");
 const { getTaxRates } = require("../shoppingCart/shopperDetsils");
 
 //SQL
@@ -59,6 +60,7 @@ server.use("/api/usageDetails", usageDetails);
 
 server.use("/api/getTaxes", getTaxRates);
 
+server.use("/api/getBusinessMetrics", getBusinessDetails);
 server.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
@@ -66,10 +68,4 @@ server.use("*", (req, res) => {
 server.listen(port, () => {
   console.log("Server Running on -->", port);
   console.log("Server build at", path.join(__dirname, "../client/build"));
-  const inputArray = [3, 30, 300, 3000];
-  for (var i = 0; i < inputArray.length; i++) {
-    setTimeout(function () {
-      console.log("Index: " + i + ", element: " + inputArray[i]);
-    }, 3000);
-  }
 });

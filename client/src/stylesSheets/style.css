@@ -1,0 +1,31 @@
+.root {
+  width: 98%;
+  margin: 0.5rem;
+}
+.container {
+  max-height: 70vh;
+}
+.inputSection {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+.textBox {
+  width: 25%;
+}
+.tableHeaderCell {
+  min-width: 5%;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Lato;
+  text-transform: uppercase;
+}
+.tableBodyCell {
+  min-width: 5%;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Lato;
+}
