@@ -113,7 +113,11 @@ class Home extends Component {
       loading,
     } = this.state;
     if (loading) {
-      return <CircularProgress />;
+      return (
+        <div className={"loaderStyles"}>
+          <CircularProgress />{" "}
+        </div>
+      );
     }
     const recordsToUse =
       businessMetrics.length > 0
@@ -207,7 +211,7 @@ class Home extends Component {
                     align={"left"}
                     className={"tableHeaderCell"}
                   >
-                    {"Reviewed By"}
+                    {"Reviewed Provided By"}
                   </TableCell>
                   <TableCell
                     key={"Rating"}

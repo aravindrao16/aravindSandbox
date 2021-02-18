@@ -29,3 +29,11 @@
   font-weight: 400;
   font-family: Lato;
 }
+.loaderStyles {
+  display: flex;
+  margin: 1rem;
+  width: 90%;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+}
