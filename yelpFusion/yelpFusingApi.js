@@ -1,5 +1,5 @@
 const axios = require("axios");
-
+const kbb = "https://sandbox.api.kbb.com/idws/vehicle/vin/id/KL4CJFSB8EB517550?vehicleClass=UsedCar&optionFilter=DecodedOnly&api_key=c9f1ccfb564f4683b376670c3"
 var headersToUse = { headers: { "Content-Type": "application/json" } };
 const getBusinessDetails = async (req, res) => {
   const { type, payload } = req.body;
