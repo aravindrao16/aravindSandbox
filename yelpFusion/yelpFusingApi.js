@@ -1,12 +1,14 @@
 const axios = require("axios");
+const kbb =
+  "https://sandbox.api.kbb.com/idws/vehicle/vin/id/KL4CJFSB8EB517550?vehicleClass=UsedCar&optionFilter=DecodedOnly&api_key=c9f1ccfb564f4683b376670c3";
 
 var headersToUse = { headers: { "Content-Type": "application/json" } };
 const getBusinessDetails = async (req, res) => {
   const { type, payload } = req.body;
   console.log("Payload", payload);
-  headersToUse.headers[
+  headersToUse[
     "authorization"
-  ] = `Bearer yOGDQWaqlWk5hXbR_O6FqKwkLk29Ac3e2LNgHoUDltnDrlsMGchXdlkohIy9O3Vmi-DBhydMFtahhJufziNpFtW3Qei-PnK-FBIPlA4cbP34ssp-UR-_agFzcIsuYHYx`;
+  ] = `Bearer rTAnZA-fFrJmMSFtyfWjcU6ILfmRf18fz2I-472XDGnfwRm1r92aYfIEfj0ohjIJ3wZmVgj4iCr_6Fa9VFiL4hYVJ1VpRzMm2rlRhubdPiPi9iZOB9w1zzuVRE44YHYx`;
   if (type === "businessSearch") {
     let url = `https://api.yelp.com/v3/businesses/search?term=${payload.typeOfSearch}&location=${payload.location}`;
     axios
@@ -41,6 +43,19 @@ const getBusinessDetails = async (req, res) => {
   }
 };
 
+const getVehicleDetails = () => {
+  axios
+    .get(kbb)
+    .then((result) => {
+      console.log("Result", result.data);
+      return result.data;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
+
 module.exports = {
   getBusinessDetails,
+  getVehicleDetails,
 };

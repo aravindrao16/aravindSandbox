@@ -4,3 +4,10 @@ export const userAuth = (payload) => {
     payload,
   };
 };
+
+export const resetHome = (payload) => {
+  return {
+    type: "RESET_HOME",
+    payload,
+  };
+};

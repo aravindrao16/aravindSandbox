@@ -2,6 +2,8 @@ const defaultValues = {
   id: "",
   name: "",
   email: "",
+  admin: false,
+  user: false,
 };
 
 export default (state = defaultValues, action) => {

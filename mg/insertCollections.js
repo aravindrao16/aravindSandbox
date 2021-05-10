@@ -10,7 +10,7 @@ const mgInsertCollections = (req, res) => {
       const db = client.db("star-wars-quotes");
       const quotesCollection = db.collection("quotes");
       quotesCollection
-        .insertOne(req.body)
+        .insertOne(payload)
         .then((result) => {
           res.send(result);
         })
