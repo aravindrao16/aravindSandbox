@@ -1,13 +1,13 @@
 const axios = require("axios");
 const kbb =
-  "https://sandbox.api.kbb.com/idws/vehicle/vin/id/KL4CJFSB8EB517550?vehicleClass=UsedCar&optionFilter=DecodedOnly&api_key=c9f1ccfb564f4683b376670c3";
+  "https://sandbox.api.kbb.com/idws/vehicle/vin/id/KL4CJFSB8EB517550?vehicleClass=UsedCar&optionFilter=DecodedOnly&api_key={key}";
 var headersToUse = { headers: { "Content-Type": "application/json" } };
 const getBusinessDetails = async (req, res) => {
   const { type, payload } = req.body;
   console.log("Payload", payload);
   headersToUse[
     "authorization"
-  ] = `Bearer rTAnZA-fFrJmMSFtyfWjcU6ILfmRf18fz2I-472XDGnfwRm1r92aYfIEfj0ohjIJ3wZmVgj4iCr_6Fa9VFiL4hYVJ1VpRzMm2rlRhubdPiPi9iZOB9w1zzuVRE44YHYx`;
+  ] = `Bearer ${token}`;
   if (type === "businessSearch") {
     let url = `https://api.yelp.com/v3/businesses/search?term=${payload.typeOfSearch}&location=${payload.location}`;
     axios
